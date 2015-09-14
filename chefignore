@@ -1,1 +1,7 @@
 .kitchen
+.kitchen.yml
+.vagrant
+Berksfile
+Berksfile.lock
+Gemfile
+Thorfile

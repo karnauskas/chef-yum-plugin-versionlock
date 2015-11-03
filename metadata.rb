@@ -4,7 +4,7 @@ maintainer_email 'marius@karnauskas.lt'
 license 'GNU Public License 3.0'
 description 'Installs/Configures yum-plugin-versionlock'
 long_description 'Installs/Configures yum-plugin-versionlock'
-version '0.1.0'
+version '0.1.1'
 
 source_url 'https://github.com/nkts/chef-yum-plugin-versionlock'
 issues_url 'https://github.com/nkts/chef-yum-plugin-versionlock/issues'

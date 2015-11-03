@@ -1,5 +1,4 @@
 [main]
-enabled = 1
-locklist = /etc/yum/pluginconf.d/versionlock.list
-#  Uncomment this to lock out "upgrade via. obsoletes" etc. (slower)
-# follow_obsoletes = 1
+enabled = <%= @enabled %>
+locklist = <%= @listfile %>
+follow_obsoletes = <%= @follow_obsoletes %>

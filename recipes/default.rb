@@ -18,6 +18,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+package 'yum-plugin-versionlock'
+
 template '/etc/yum/pluginconf.d/versionlock.conf' do
   source 'versionlock.conf.erb'
   variables(

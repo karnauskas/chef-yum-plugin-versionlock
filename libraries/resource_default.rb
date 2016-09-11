@@ -10,7 +10,7 @@ class Chef
         @provides = :yum_version_lock
         @provider = Chef::Provider::YumVersionLock
         @action = :add
-        @allowed_actions = [:add, :remove, :nothing]
+        @allowed_actions = [:add, :remove, :nothing, :update]
         @name = name
       end
 

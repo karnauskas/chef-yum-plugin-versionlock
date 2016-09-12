@@ -36,7 +36,7 @@ class Chef
           :version, arg,
           :required => true,
           :kind_of => [String, Integer],
-          :default => '0'
+          :default => nil
         )
       end
 
@@ -52,7 +52,7 @@ class Chef
       def arch(arg = nil)
         set_or_return(
           :arch, arg,
-          :required => true,
+          :required => false,
           :kind_of => String,
           :default => node['kernel']['machine']
         )

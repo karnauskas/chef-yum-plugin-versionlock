@@ -18,16 +18,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+package 'yum-plugin-versionlock'
+
 template '/etc/yum/pluginconf.d/versionlock.conf' do
+  mode 0o644
   source 'versionlock.conf.erb'
   variables(
     enabled: node['yum-plugin-versionlock']['enabled'],
-    listfile: node['yum-plugin-versionlock']['listfile'],
+    locklist: node['yum-plugin-versionlock']['locklist'],
     follow_obsoletes: node['yum-plugin-versionlock']['follow_obsoletes']
   )
-end
-
-template node['yum-plugin-versionlock']['locklist'] do
-  source 'versionlock.list.erb'
-  variables versions: node['yum-plugin-versionlock']['versions']
 end

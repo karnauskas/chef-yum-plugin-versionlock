@@ -15,7 +15,6 @@
 #
 
 default['yum-plugin-versionlock'] = {
-  'versions' => {},
   'enabled' => 1,
   'follow_obsoletes' => 0,
   'locklist' => '/etc/yum/pluginconf.d/versionlock.list'

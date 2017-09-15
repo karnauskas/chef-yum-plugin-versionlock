@@ -6,16 +6,14 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: centos-6.6
-  #- name: centos-7.1
-  #- name: fedora-21
+  - name: centos-6.9
+  - name: centos-7.3
+
+verifier:
+    name: inspec
 
 suites:
   - name: default
     run_list:
       - recipe[yum-plugin-versionlock::default]
-    attributes:
-      yum-plugin-versionlock:
-        versions:
-          'mc-4.8.13-1.fc22.x86_64': false
-          'mc-4.8.13-2.fc22.x86_64': true
+      - recipe[test::lwrp]

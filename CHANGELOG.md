@@ -1,3 +1,9 @@
+# 0.2.0
+
+- Migrated to Chef custom resource
+
+- Added test-kitchen tests for LWRP functionality
+
 # 0.1.2
 
 - Virender Khatri - Added travis ci

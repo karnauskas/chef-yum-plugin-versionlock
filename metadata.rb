@@ -8,8 +8,8 @@ version '0.2.0'
 
 chef_version '>= 12.5'
 
-source_url 'https://github.com/nkts/chef-yum-plugin-versionlock'
-issues_url 'https://github.com/nkts/chef-yum-plugin-versionlock/issues'
+source_url 'https://github.com/karnauskas/chef-yum-plugin-versionlock'
+issues_url 'https://github.com/karnauskas/chef-yum-plugin-versionlock/issues'
 
 supports 'amazon'
 supports 'redhat', '>= 6'

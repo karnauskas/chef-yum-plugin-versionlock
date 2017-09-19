@@ -4,7 +4,7 @@ property :package, String, name_property: true
 property :epoch, [String, Integer], default: '0'
 property :version, [String, Integer], required: true
 property :release, [String, Integer], required: true
-property :arch, [String, Integer], default: node['kernel']['machine'], equal_to: %w(x86_64 i686)
+property :arch, [String, Integer], default: node['kernel']['machine']
 
 default_action :add
 

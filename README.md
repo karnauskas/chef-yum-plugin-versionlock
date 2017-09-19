@@ -30,11 +30,6 @@ https://github.com/nkts/chef-yum-plugin-versionlock
 This cookbook was tested on CentOS 6.8 and expected to work on other RHEL platforms.
 
 
-## Cookbook Dependency
-
-- yum
-
-
 ## Recipes
 
 - `yum-plugin-versionlock::default` - installs and configure yum plugin versionlock

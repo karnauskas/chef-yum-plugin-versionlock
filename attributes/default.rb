@@ -14,8 +14,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-default['yum-plugin-versionlock'] = {
-  'enabled' => 1,
-  'follow_obsoletes' => 0,
-  'locklist' => '/etc/yum/pluginconf.d/versionlock.list'
-}
+default['yum-plugin-versionlock']['enabled'] = 1
+default['yum-plugin-versionlock']['follow_obsoletes'] = 0
+default['yum-plugin-versionlock']['locklist'] = '/etc/yum/pluginconf.d/versionlock.list'

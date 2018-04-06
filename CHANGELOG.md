@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Fixed constraints error
+
 # 0.2.0
 
 - Migrated to Chef custom resource

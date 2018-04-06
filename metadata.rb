@@ -12,5 +12,5 @@ source_url 'https://github.com/nkts/chef-yum-plugin-versionlock'
 issues_url 'https://github.com/nkts/chef-yum-plugin-versionlock/issues'
 
 supports 'amazon'
-supports 'redhat', '>= 6'
-supports 'centos', '>= 6'
+supports 'redhat', '>= 6.0'
+supports 'centos', '>= 6.0'

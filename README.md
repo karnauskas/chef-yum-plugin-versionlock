@@ -1,7 +1,7 @@
 yum-plugin-versionlock Cookbook
 ================
 
-[![Cookbook](https://img.shields.io/cookbook/v/yum-version-lock.svg)](https://github.com/karnauskas/chef-yum-plugin-versionlock)
+[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.0-green.svg)](https://github.com/karnauskas/chef-yum-plugin-versionlock)
 
 This is a [Chef] cookbook to manage to manage Yum plugin to lock specified packages from being updated.
 
@@ -16,7 +16,7 @@ cookbook 'yum-plugin-versionlock', '~> 0.2.0'
 ## From Git
 
 ```ruby
-cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: "v0.2.0"
+cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.2.0'
 ```
 
 ## Repository

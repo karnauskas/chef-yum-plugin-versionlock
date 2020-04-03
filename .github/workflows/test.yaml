@@ -16,6 +16,9 @@ jobs:
       - name: Prepare
         run: |
           bundle install
-      - name: Lint
+      - name: Run Rubocop
         run: |
-          rake lint
+          rake rubocop
+      - name: Run Foodcritic
+        run: |
+          rake foodcritic

@@ -4,7 +4,7 @@ AllCops:
     - Berksfile
     - Vagrantfile
     - Thorfile
-    - Gemfile
+    # - Gemfile
     - ".kitchen/*"
 Encoding:
   Enabled: false
@@ -26,3 +26,15 @@ MethodLength:
   Enabled: false
 AbcSize:
   Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true

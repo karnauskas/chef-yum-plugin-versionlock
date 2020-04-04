@@ -8,7 +8,7 @@ property :arch, [String, Integer], default: node['kernel']['machine']
 
 default_action :add
 
-action_class do
+action_class do # rubocop:disable Metrics/BlockLength
   def set_yum_version_lock
     version_string =
       if node['platform_version'].to_i >= 8

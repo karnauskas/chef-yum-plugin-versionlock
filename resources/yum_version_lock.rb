@@ -1,4 +1,5 @@
 resource_name :yum_version_lock
+provides :yum_version_lock
 
 property :package, String, name_property: true
 property :epoch, [String, Integer], default: '0'

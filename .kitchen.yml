@@ -10,7 +10,7 @@ platforms:
   - name: centos-7.3
 
 verifier:
-    name: inspec
+  name: inspec
 
 suites:
   - name: default

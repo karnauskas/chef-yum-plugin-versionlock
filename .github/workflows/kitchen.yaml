@@ -1,5 +1,5 @@
 ---
-name: Run tests
+name: Kitchen
 
 on: [push, pull_request]
 
@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ["2.5", "2.6", "2.7"]
+        ruby: ["2.7"]
+        chef: ["15", "16"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,21 +28,19 @@ jobs:
       - name: Prepare
         run: |
           bundle config path vendor/bundle
-          bundle config set without 'integration vagrant'
+          bundle config set without 'development vagrant'
           bundle || bundle install --jobs 4 --retry 3
-      - name: Run ChefStyle
+      - name: Unit tests
         run: |
-          bundle exec rubocop -r chefstyle --format offenses
-      - name: Run Foodcritic
+          bundle exec rake spec
+      - name: Integration tests
         run: |
-          bundle exec rake foodcritic
-      - name: Run Rubocop
-        run: |
-          bundle exec rake rubocop
-  yamllint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Run yaml Lint
-        uses: actionshub/yamllint@master
+          bundle exec kitchen test
+        env:
+          KITCHEN_YAML: .kitchen.dokken.yml
+          CHEF_VERSION: ${{ matrix.chef }}
+          CHEF_LICENSE: accept-no-persist
+      - uses: actions/upload-artifact@v2
+        with:
+          name: kitchen.log
+          path: .kitchen/logs/kitchen.log

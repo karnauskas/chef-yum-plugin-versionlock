@@ -1,0 +1,36 @@
+---
+driver:
+  name: dokken
+  privileged: true
+  chef_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
+
+provisioner:
+  name: dokken
+  deprecations_as_errors: true
+
+transport:
+  name: dokken
+
+verifier:
+  name: inspec
+  load_plugins: true
+
+platforms:
+  - name: centos-6
+    driver:
+      image: dokken/centos-6
+      pid_one_command: /sbin/init
+  - name: centos-7
+    driver:
+      image: dokken/centos-7
+      pid_one_command: /usr/lib/systemd/systemd
+  - name: centos-8
+    driver:
+      image: dokken/centos-8
+      pid_one_command: /usr/lib/systemd/systemd
+
+suites:
+  - name: default
+    run_list:
+      - recipe[yum-plugin-versionlock::default]
+      - recipe[test::lwrp]

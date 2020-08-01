@@ -39,7 +39,10 @@ jobs:
           CHEF_LICENSE: accept-no-persist
       - name: Show log file
         run: |
-          cat .kitchen/logs/kitchen.log
+          for i in $(ls.kitchen/logs/*.log); do
+            echo "logfile: $i"
+            cat "$i"
+          done
       - uses: actions/upload-artifact@v2
         with:
           name: kitchen.log

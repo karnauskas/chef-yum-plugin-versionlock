@@ -14,7 +14,6 @@ transport:
 verifier:
   name: inspec
   load_plugins: true
-  # name: dummy
 
 platforms:
   - name: centos-6

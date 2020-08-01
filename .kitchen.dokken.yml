@@ -7,15 +7,25 @@ driver:
 
 provisioner:
   name: dokken
+  deprecations_as_errors: true
 
 transport:
   name: dokken
 
 verifier:
-  name: inspec
+  # name: inspec
+  name: dummy
 
 platforms:
+  - name: centos-6
+    driver:
+      image: dokken/centos-7
+      pid_one_command: /usr/lib/systemd/systemd
   - name: centos-7
+    driver:
+      image: dokken/centos-7
+      pid_one_command: /usr/lib/systemd/systemd
+  - name: centos-8
     driver:
       image: dokken/centos-7
       pid_one_command: /usr/lib/systemd/systemd

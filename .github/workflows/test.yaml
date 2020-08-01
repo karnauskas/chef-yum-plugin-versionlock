@@ -31,13 +31,13 @@ jobs:
           bundle || bundle install --jobs 4 --retry 3
       - name: Run ChefStyle
         run: |
-          rubocop -r chefstyle --format offenses
+          bundle exec rubocop -r chefstyle --format offenses
       - name: Run Foodcritic
         run: |
-          rake foodcritic
+          bundle exec rake foodcritic
       - name: Run Rubocop
         run: |
-          rake rubocop
+          bundle exec rake rubocop
   yamllint:
     runs-on: ubuntu-latest
     steps:

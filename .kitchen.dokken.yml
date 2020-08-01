@@ -3,7 +3,6 @@ driver:
   name: dokken
   privileged: true
   chef_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
-  env: [CHEF_LICENSE=accept]
 
 provisioner:
   name: dokken

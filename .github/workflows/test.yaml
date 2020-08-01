@@ -37,3 +37,10 @@ jobs:
       - name: Run Rubocop
         run: |
           rake rubocop
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run yaml Lint
+        uses: actionshub/yamllint@master

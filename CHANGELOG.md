@@ -1,3 +1,6 @@
+# 0.2.2
+- Fixed for [CHEF-31](https://docs.chef.io/deprecations_resource_name_without_provides/)
+
 # 0.2.1
 
 - Fixed constraints error

@@ -20,7 +20,7 @@
 
 package 'yum-plugin-versionlock'
 
-template '/etc/yum/pluginconf.d/versionlock.conf' do
+template node['yum-plugin-versionlock']['conf'] do
   mode 0o644
   source 'versionlock.conf.erb'
   variables(

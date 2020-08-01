@@ -18,7 +18,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
       - name: Prepare
-        run: |
-          bundle install --without development
+        run: bundle install --without development
       - name: Test
-          KITCHEN_YAML=.kitchen.docker.yml kitchen test
+        run: kitchen test
+        env:
+          KITCHEN_YAML: .kitchen.docker.yml

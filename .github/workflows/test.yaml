@@ -18,10 +18,13 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Prepare
         run: |
-          bundle install
-      - name: Run Rubocop
+          bundle install --without development integration
+      - name: Run ChefStyle
         run: |
-          rake rubocop
+          rubocop -r chefstyle --format offenses
       - name: Run Foodcritic
         run: |
           rake foodcritic
+      - name: Run Rubocop
+        run: |
+          rake rubocop

@@ -6,6 +6,7 @@ gem 'chefstyle'
 gem 'community_cookbook_releaser'
 gem 'foodcritic'
 gem 'rake'
+gem 'rubocop'
 gem 'stove'
 
 group :integration do

@@ -38,3 +38,5 @@ Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: single_quotes

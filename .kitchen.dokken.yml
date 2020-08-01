@@ -19,15 +19,15 @@ verifier:
 platforms:
   - name: centos-6
     driver:
-      image: dokken/centos-7
-      pid_one_command: /usr/lib/systemd/systemd
+      image: dokken/centos-6
+      pid_one_command: /sbin/init
   - name: centos-7
     driver:
       image: dokken/centos-7
       pid_one_command: /usr/lib/systemd/systemd
   - name: centos-8
     driver:
-      image: dokken/centos-7
+      image: dokken/centos-8
       pid_one_command: /usr/lib/systemd/systemd
 
 suites:

@@ -1,0 +1,25 @@
+---
+driver:
+  name: dokken
+  privileged: true
+
+provisioner:
+  name: dokken
+
+transport:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+    driver:
+      image: dokken/centos-7
+      pid_one_command: /usr/lib/systemd/systemd
+
+suites:
+  - name: default
+    run_list:
+      - recipe[yum-plugin-versionlock::default]
+      - recipe[test::lwrp]

@@ -10,7 +10,7 @@ end
 
 group :integration do
   gem 'inspec'
-  gem 'kitchen-docker'
+  gem 'kitchen-dokken'
   gem 'kitchen-vagrant'
   gem 'test-kitchen'
 end

@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 
-group :test do
-  gem 'berkshelf'
-  gem 'chefspec'
-  gem 'chefstyle'
-  gem 'foodcritic'
-  gem 'rake'
-end
+gem 'berkshelf'
+gem 'chefspec'
+gem 'chefstyle'
+gem 'community_cookbook_releaser'
+gem 'foodcritic'
+gem 'rake'
+gem 'stove'
 
 group :integration do
-  gem 'inspec'
   gem 'kitchen-dokken'
   gem 'kitchen-inspec'
-  gem 'kitchen-vagrant'
   gem 'test-kitchen'
+end
+
+group :vagrant do
+  gem 'kitchen-vagrant'
 end

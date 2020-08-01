@@ -12,8 +12,9 @@ transport:
   name: dokken
 
 verifier:
-  # name: inspec
-  name: dummy
+  name: inspec
+  load_plugins: true
+  # name: dummy
 
 platforms:
   - name: centos-6

@@ -1,4 +1,5 @@
-name: Test with kitchen
+---
+name: Kitchen
 
 on: [push, pull_request]
 
@@ -27,8 +28,8 @@ jobs:
       - name: Prepare
         run: |
           bundle config path vendor/bundle
-          bundle config set without 'development'
-          bundle install --jobs 4 --retry 3
+          bundle config set without 'development vagrant'
+          bundle || bundle install --jobs 4 --retry 3
       - name: Test
         run: |
           bundle exec kitchen test
@@ -36,6 +37,9 @@ jobs:
           KITCHEN_YAML: .kitchen.dokken.yml
           CHEF_VERSION: ${{ matrix.chef }}
           CHEF_LICENSE: accept-no-persist
+      - name: Show log file
+        run: |
+          cat .kitchen/logs/kitchen.log
       - uses: actions/upload-artifact@v2
         with:
           name: kitchen.log

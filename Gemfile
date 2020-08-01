@@ -9,6 +9,7 @@ gem 'rake'
 gem 'stove'
 
 group :integration do
+  gem 'inspec'
   gem 'kitchen-dokken'
   gem 'kitchen-inspec'
   gem 'test-kitchen'

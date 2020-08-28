@@ -3,6 +3,7 @@ driver:
   name: dokken
   privileged: true
   chef_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
+  env: [CHEF_LICENSE=accept]
 
 provisioner:
   name: dokken
@@ -32,5 +33,10 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[yum-plugin-versionlock::default]
       - recipe[test::lwrp]
+  - name: idempotency
+    run_list:
+      - recipe[test::idempotency]
+    provisioner:
+      enforce_idempotency: true
+      multiple_converge: 2

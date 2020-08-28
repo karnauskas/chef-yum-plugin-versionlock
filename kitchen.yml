@@ -4,7 +4,8 @@ driver:
 
 provisioner:
   name: chef_solo
-
+  deprications_as_errors: true
+   
 platforms:
   - name: centos-6.9
   - name: centos-7.3
@@ -15,5 +16,10 @@ verifier:
 suites:
   - name: default
     run_list:
-      - recipe[yum-plugin-versionlock::default]
       - recipe[test::lwrp]
+  - name: idempotency
+    run_list:
+      - recipe[test::idempotency]
+    provisioner:
+      enforce_idempotency: true
+      multiple_converge: 2

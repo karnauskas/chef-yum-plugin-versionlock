@@ -1,7 +1,10 @@
+.foodcritic
+.github
 .kitchen
 .kitchen.yml
 .vagrant
 Berksfile
 Berksfile.lock
 Gemfile
+Gemfile.lock
 Thorfile

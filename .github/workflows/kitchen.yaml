@@ -30,6 +30,9 @@ jobs:
           bundle config path /tmp/vendor/bundle
           bundle config set without 'development vagrant'
           bundle || bundle install --jobs 4 --retry 3
+      - name: Run Cookstyle
+        run: |
+          bundle exec cookstyle -D
       - name: Unit tests
         run: |
           bundle exec rspec
@@ -40,7 +43,3 @@ jobs:
           KITCHEN_YAML: .kitchen.dokken.yml
           CHEF_VERSION: ${{ matrix.chef }}
           CHEF_LICENSE: accept-no-persist
-      - uses: actions/upload-artifact@v2
-        with:
-          name: kitchen.log
-          path: .kitchen/logs/kitchen.log

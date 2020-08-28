@@ -2,7 +2,7 @@
 # Cookbook:: yum-plugin-versionlock
 # Recipe:: default
 #
-# Copyright:: 2015, Marius Karnauskas <marius@karnauskas.lt>
+# Copyright:: 2015-2020, Marius Karnauskas <marius@karnauskas.lt>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 package 'yum-plugin-versionlock'
 
 template node['yum-plugin-versionlock']['conf'] do
-  mode '0644'
+  mode '644'
   source 'versionlock.conf.erb'
   variables(
     enabled: node['yum-plugin-versionlock']['enabled'],

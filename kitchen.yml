@@ -4,7 +4,7 @@ driver:
 
 provisioner:
   name: chef_solo
-  deprications_as_errors: true
+  deprecations_as_errors: true
    
 platforms:
   - name: centos-6.9

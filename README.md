@@ -27,16 +27,33 @@ https://github.com/karnauskas/chef-yum-plugin-versionlock
 
 ## Recipes
 
-- `yum-plugin-versionlock::default` - installs and configure yum plugin versionlock
+- `yum-plugin-versionlock::default` - installs and configures yum plugin versionlock
 
+## Resources
 
-## LWRP yum_version_lock
+- `yum_version_lock` add/remove/update lock for a given package
 
-LWRP `yum_version_lock` add/remove/update yum version lock list file `default['yum-plugin-versionlock']['locklist']` for a package (`EPOCH:NAME-VERSION-RELEASE.ARCH`).
+### Actions:
 
+| Action 	| Description                                                            	|
+|--------	|------------------------------------------------------------------------	|
+| add    	| Creates a new package lock. Has no effect if one already exists.       	|
+| update 	| Updates an existing lock, or creates a new one if one does not exists. 	|
+| delete 	| Deletes a lock, if it exists.                                          	|
 
-**LWRP Yum Lock Package Version example**
+### Properties:
 
+| Name    	| Type            	| Default                     	|
+|---------	|-----------------	|-----------------------------	|
+| package 	| String          	| Resource name               	|
+| epoch   	| String, Integer 	| `0`                         	|
+| version 	| String, Integer 	|                             	|
+| release 	| String, Integer 	|                             	|
+| arch    	| String          	| `node['kernel']['machine']` 	|
+
+### Examples:
+
+Create a lock if it does not exist:
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -45,9 +62,7 @@ yum_version_lock 'topbeat' do
 end
 ```
 
-
-**LWRP Yum Update existing Package Version Lock example**
-
+Update an existing lock or create a new one:
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -56,10 +71,7 @@ yum_version_lock 'topbeat' do
 end
 ```
 
->> Note: action `:update` check for existing package release and update to newer version if exists, otherwise creates package version lock.
-
-**LWRP Yum Remove Package Version Lock example**
-
+Remove an existing lock:
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -68,25 +80,13 @@ yum_version_lock 'topbeat' do
 end
 ```
 
+## Attributes
 
-**LWRP Options**
-
-- *action* (optional) - default `:add`, options: :add, :remove, :update, :nothing
-- *epoch* (optional, String/Integer)  - yum package version lock epoch value
-- *package* (optional, String) - default `resource_name`, yum package name
-- *version* (optional, String) - yum package version
-- *release* (optional, String) - yum package release
-- *arch* (optional, String) - default `node['kernel']['machine']`, yum package arch
-
-
-## Core Attributes
-
-* `default['yum-plugin-versionlock']['enabled']` (default: `1`): yum plugin versionlock config attribute
-
-* `default['yum-plugin-versionlock']['follow_obsoletes']` (default: `0`): yum plugin versionlock config attribute
-
-* `default['yum-plugin-versionlock']['locklist']` (default: `/etc/yum/pluginconf.d/versionlock.list`): yum plugin versionlock lock list file
-
+| Attribute                                            	| Default value                            	| Description                                            	|
+|------------------------------------------------------	|------------------------------------------	|--------------------------------------------------------	|
+| `node['yum-plugin-versionlock']['enabled']`          	| `1`                                      	| Whether to enable the plugin                          	|
+| `node['yum-plugin-versionlock']['follow_obsoletes']` 	| `0`                                      	| Whether to see if specified packages have an obsoleter 	|
+| `node['yum-plugin-versionlock']['locklist']`         	| `/etc/yum/pluginconf.d/versionlock.list` 	| Path to the config file                               	|
 
 # Contributing
 

@@ -1,4 +1,4 @@
-# Copyright 2015, Marius Karnauskas <marius@karnauskas.lt>
+# Copyright:: 2015, Marius Karnauskas <marius@karnauskas.lt>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,7 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+default['yum-plugin-versionlock']['conf'] = '/etc/yum/pluginconf.d/versionlock.conf'
 default['yum-plugin-versionlock']['enabled'] = 1
 default['yum-plugin-versionlock']['follow_obsoletes'] = 0
-default['yum-plugin-versionlock']['conf'] = '/etc/yum/pluginconf.d/versionlock.conf'
 default['yum-plugin-versionlock']['locklist'] = '/etc/yum/pluginconf.d/versionlock.list'
+default['yum-plugin-versionlock']['show_hint'] = 1

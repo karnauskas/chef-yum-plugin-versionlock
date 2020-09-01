@@ -10,13 +10,13 @@ This is a [Chef] cookbook to manage to manage Yum plugin to lock specified packa
 ## Most Recent Release
 
 ```ruby
-cookbook 'yum-plugin-versionlock', '~> 0.2.2'
+cookbook 'yum-plugin-versionlock', '~> 0.2.3'
 ```
 
 ## From Git
 
 ```ruby
-cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.2.2'
+cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.2.3'
 ```
 
 ## Repository

@@ -3,7 +3,6 @@
 include_recipe 'yum-plugin-versionlock'
 
 # Test Adding a lock
-
 yum_version_lock 'rpm' do
   version '4.11.3'
   release '21'
@@ -12,7 +11,6 @@ yum_version_lock 'rpm' do
 end
 
 # Test Adding a lock via update action
-
 yum_version_lock 'sed' do
   version '4.2.2'
   release '5'
@@ -20,7 +18,6 @@ yum_version_lock 'sed' do
 end
 
 # Test Updating a lock
-
 yum_version_lock 'grep' do
   version '2.20'
   release '2'
@@ -34,7 +31,6 @@ yum_version_lock 'grep' do
 end
 
 # Test Removing a lock
-
 yum_version_lock 'yum' do
   version '3.4.3'
   release '150'

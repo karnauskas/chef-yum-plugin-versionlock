@@ -1,0 +1,14 @@
+---
+AllCops:
+  TargetChefVersion: 16.latest
+  Exclude:
+    - Rakefile
+    - Berksfile
+    - Vagrantfile
+    - Thorfile
+    # - Gemfile
+    - ".kitchen/*"
+ChefModernize/FoodcriticComments:
+  Enabled: true
+ChefStyle/CopyrightCommentFormat:
+  Enabled: true

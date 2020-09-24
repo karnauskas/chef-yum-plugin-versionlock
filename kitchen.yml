@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+  deprecations_as_errors: true
+
+platforms:
+  - name: centos-6
+  - name: centos-7
+  - name: centos-8
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test::lwrp]
+  - name: idempotency
+    run_list:
+      - recipe[test::idempotency]
+    provisioner:
+      enforce_idempotency: true
+      multiple_converge: 2

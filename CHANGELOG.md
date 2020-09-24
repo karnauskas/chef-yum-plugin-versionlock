@@ -1,4 +1,12 @@
+# Unreleased
+
+- Use line cookbook instead of Chef::Util::FileEdit for idempotency
+- Add idempotency testing suite
+- Cleanup README
+- Cookstyle fixes for Chef 16
+
 # 0.2.2
+
 - Fixed for [CHEF-31](https://docs.chef.io/deprecations_resource_name_without_provides/)
 
 # 0.2.1

@@ -40,11 +40,11 @@ jobs:
         run: |
           bundle exec cookstyle -D
 
-      - name: Unit tests
+      - name: Run Unit tests
         run: |
-          bundle exec rspec
+          bundle exec rake spec
 
-      - name: Integration tests
+      - name: Run Integration tests
         run: |
           bundle exec kitchen test
         env:

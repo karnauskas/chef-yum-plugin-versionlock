@@ -22,13 +22,13 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
 
-      - name: Set up cache
-        uses: actions/cache@v2
-        with:
-          path: /tmp/vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+      # - name: Set up cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: /tmp/vendor/bundle
+      #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gems-
 
       - name: Prepare
         run: |

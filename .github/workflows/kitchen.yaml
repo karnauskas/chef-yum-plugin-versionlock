@@ -36,13 +36,9 @@ jobs:
           bundle config set without 'development vagrant'
           bundle || bundle install --jobs 4 --retry 3
 
-      - name: Run Cookstyle
-        run: |
-          bundle exec cookstyle -D
-
       - name: Run Unit tests
         run: |
-          bundle exec rake spec
+          bundle exec rake lint
 
       - name: Run Integration tests
         run: |

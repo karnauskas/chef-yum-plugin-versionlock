@@ -1,6 +1,8 @@
 # Unreleased
 
-- Use line cookbook instead of Chef::Util::FileEdit for idempotency
+# 0.3.0
+
+- Use line cookbook instead of Chef::Util::FileEdit for idempotency (https://github.com/chef/chef/issues/7043)
 - Add idempotency testing suite
 - Cleanup README
 - Cookstyle fixes for Chef 16

@@ -12,3 +12,5 @@ ChefModernize/FoodcriticComments:
   Enabled: true
 ChefStyle/CopyrightCommentFormat:
   Enabled: true
+Style/StringLiterals:
+  Enabled: false

@@ -1,22 +1,19 @@
-yum-plugin-versionlock Cookbook
+yum-plugin-versionlock
 ================
 
-[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.2-green.svg)](https://github.com/karnauskas/chef-yum-plugin-versionlock) ![Kitchen](https://github.com/karnauskas/chef-yum-plugin-versionlock/workflows/Kitchen/badge.svg)
+Manages Yum plugin to lock specified packages from being updated.
 
-This is a [Chef] cookbook to manage to manage Yum plugin to lock specified packages from being updated.
-
-> For Production environment, always prefer the [most recent release](https://supermarket.chef.io/cookbooks/yum-plugin-versionlock).
 
 ## Most Recent Release
 
 ```ruby
-cookbook 'yum-plugin-versionlock', '~> 0.2.3'
+cookbook 'yum-plugin-versionlock', '~> 0.3.0'
 ```
 
 ## From Git
 
 ```ruby
-cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.2.3'
+cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.3.0'
 ```
 
 ## Repository
@@ -90,16 +87,15 @@ end
 
 # Contributing
 
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+- Star this pository/follow cookbook on Supermarket if you find it useful or use it (we have no idea how much it is used)
+- Open issue: this helps to understand issues, track any work done to resolve issue. Coding skills are nice, but communicating is even better.
+- Fork the repository on Github
+- Create a named feature branch (like `add_component_x`)
+- Write your change
+- Write tests for your change (if applicable). Currently this project uses Github Actions for CI.
+- Run the tests, ensuring they all pass
+- Submit a Pull Request using Github
 
 ## License and Authors
 
-Author: Marius Karnauskas (<marius@karnauskas.lt>) and [Contributors]
-
-[Chef]: https://www.chef.io/
-[Contributors]: https://github.com/karnauskas/chef-yum-plugin-versionlock/graphs/contributors
+Author: [Marius Karnauskas](mailto:marius@karnauskas.lt) and [Contributors](https://github.com/karnauskas/chef-yum-plugin-versionlock/graphs/contributors)

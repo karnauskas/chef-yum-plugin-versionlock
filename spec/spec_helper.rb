@@ -1,5 +1,5 @@
-require 'chefspec'
-require 'chefspec/berkshelf'
+require "chefspec"
+require "chefspec/berkshelf"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|

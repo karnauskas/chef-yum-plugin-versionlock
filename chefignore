@@ -1,10 +1,15 @@
 .foodcritic
 .github
+.idea
 .kitchen
-.kitchen.yml
+.rspec
+.rubocop.yml
 .vagrant
 Berksfile
 Berksfile.lock
 Gemfile
 Gemfile.lock
+kitchen.dokken.yml
+kitchen.yml
 Thorfile
+Vagrantfile

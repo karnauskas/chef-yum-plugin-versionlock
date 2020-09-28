@@ -1,11 +1,13 @@
 ---
-name: Kitchen tests
+name: CI
 
-on: [push, pull_request]
+"on":
+  - push
+  - pull_request
 
 jobs:
   build:
-    name: Kitchen test
+    name: Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -14,10 +16,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+
       - name: Set up cache
         uses: actions/cache@v2
         with:
@@ -25,21 +29,25 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+
       - name: Prepare
         run: |
           bundle config path /tmp/vendor/bundle
           bundle config set without 'development vagrant'
           bundle || bundle install --jobs 4 --retry 3
+
       - name: Run Cookstyle
         run: |
           bundle exec cookstyle -D
+
       - name: Unit tests
         run: |
           bundle exec rspec
+
       - name: Integration tests
         run: |
           bundle exec kitchen test
         env:
-          KITCHEN_YAML: .kitchen.dokken.yml
+          KITCHEN_YAML: kitchen.dokken.yml
           CHEF_VERSION: ${{ matrix.chef }}
           CHEF_LICENSE: accept-no-persist

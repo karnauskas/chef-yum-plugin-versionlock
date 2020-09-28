@@ -10,7 +10,6 @@ if os["release"][0].to_i >= 8
     it { should be_a_file }
     it { should_not be_directory }
     its("mode") { should cmp "0644" }
-    its("size") { should gt 64 }
     its("content") { should match(/^enabled = [01]/) }
     its("content") { should match(%r{locklist = /[^\0]+}) }
     its("content") { should match(/^follow_obsoletes = [01]/) }
@@ -30,7 +29,6 @@ else
     it { should be_a_file }
     it { should_not be_directory }
     its("mode") { should cmp "0644" }
-    its("size") { should gt 64 }
     its("content") { should match(/^enabled = [01]/) }
     its("content") { should match(%r{locklist = /[^\0]+}) }
     its("content") { should match(/^follow_obsoletes = [01]/) }

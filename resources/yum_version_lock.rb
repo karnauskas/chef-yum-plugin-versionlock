@@ -39,6 +39,7 @@ action :update do
     path node["yum-plugin-versionlock"]["locklist"]
     pattern line_regex
     line version_string
+    remove_duplicates true
   end
 end
 

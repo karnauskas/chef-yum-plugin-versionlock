@@ -19,3 +19,8 @@ else
     its("content") { should_not match "0:yum-3.4.3-150.x86_64" }
   end
 end
+
+# check for duplicates from :update
+describe command("sort /etc/yum/pluginconf.d/versionlock.list | uniq --count") do
+  its('stdout') { should match /1 (0:)?grep/ }
+end

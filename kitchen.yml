@@ -5,6 +5,7 @@ driver:
 provisioner:
   name: chef_solo
   deprecations_as_errors: true
+  multiple_converge: 2
 
 platforms:
   - name: centos-6
@@ -23,4 +24,3 @@ suites:
       - recipe[test::idempotency]
     provisioner:
       enforce_idempotency: true
-      multiple_converge: 2

@@ -7,13 +7,13 @@ Manages Yum plugin to lock specified packages from being updated.
 ## Most Recent Release
 
 ```ruby
-cookbook 'yum-plugin-versionlock', '~> 0.3.0'
+cookbook 'yum-plugin-versionlock', '~> 0.3.1'
 ```
 
 ## From Git
 
 ```ruby
-cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.3.0'
+cookbook 'yum-plugin-versionlock', github: 'karnauskas/chef-yum-plugin-versionlock',  tag: 'v0.3.1'
 ```
 
 ## Repository

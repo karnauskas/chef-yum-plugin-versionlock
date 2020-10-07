@@ -3,7 +3,7 @@ maintainer "Marius Karnauskas"
 maintainer_email "marius@karnauskas.lt"
 license "GPL-3.0"
 description "Installs/Configures yum-plugin-versionlock"
-version "0.3.0"
+version "0.3.1"
 
 chef_version ">= 14"
 

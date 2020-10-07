@@ -1,5 +1,8 @@
 # Unreleased
 
+# 0.3.1
+- Remove duplicated entries from lock file
+
 # 0.3.0
 
 - Use line cookbook instead of Chef::Util::FileEdit for idempotency (https://github.com/chef/chef/issues/7043)

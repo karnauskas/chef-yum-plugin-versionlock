@@ -1,6 +1,7 @@
 ## Recipe to test the LWRPs and the default recipe
 
 include_recipe "yum-plugin-versionlock"
+include_recipe 'yum-centos::vault'
 
 # Test Adding a lock
 yum_version_lock "rpm" do
@@ -42,3 +43,17 @@ yum_version_lock "yum" do
   release "150"
   action :remove
 end
+
+# Test that locks actually work
+yum_version_lock "gcc" do
+  case node['platform_version'].to_i
+  when 7
+    version "4.8.5"
+    release "39.el7"
+  when 8
+    version "8.3.1"
+    release "5.el8.0.2"
+  end
+  action :update
+end
+package 'gcc'

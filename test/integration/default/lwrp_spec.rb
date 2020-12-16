@@ -24,3 +24,17 @@ end
 describe command("sort /etc/yum/pluginconf.d/versionlock.list | uniq --count") do
   its('stdout') { should match /1 (0:)?grep/ }
 end
+
+# verify that the correct locked version of GCC was installed
+case os.release.to_i
+when 7
+  describe command('yum list installed gcc') do
+    its('stdout') { should match /gcc.x86_64 +4.8.5-39.el7 +@centos-vault-7.8.2003-base/ }
+    its('stdout') { should_not match /gcc.x86_64 +4.8.5-44.el7 +@base/ }
+  end
+when 8
+  describe command('yum list installed gcc') do
+    its('stdout') { should match /gcc.x86_64 +8.3.1-5.el8.0.2 +@centos-vault-8.2.2004-appstream/ }
+    its('stdout') { should_not match /gcc.x86_64 +8.3.1-5.el8 +@appstream/ }
+  end
+end

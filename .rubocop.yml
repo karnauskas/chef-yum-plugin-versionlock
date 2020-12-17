@@ -8,9 +8,10 @@ AllCops:
     - Thorfile
     # - Gemfile
     - ".kitchen/*"
-ChefModernize/FoodcriticComments:
+Chef/Modernize/FoodcriticComments:
   Enabled: true
-ChefStyle/CopyrightCommentFormat:
+Chef/Style/CopyrightCommentFormat:
   Enabled: true
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
+  EnforcedStyle: double_quotes

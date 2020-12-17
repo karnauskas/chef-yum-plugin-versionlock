@@ -10,6 +10,4 @@ chef_version ">= 14"
 source_url "https://github.com/karnauskas/chef-yum-plugin-versionlock"
 issues_url "https://github.com/karnauskas/chef-yum-plugin-versionlock/issues"
 
-depends "line"
-
 supports "centos", ">= 7.0"

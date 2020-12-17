@@ -1,8 +1,6 @@
-yum-plugin-versionlock
-================
+# yum-plugin-versionlock
 
 Manages Yum plugin to lock specified packages from being updated.
-
 
 ## Most Recent Release
 
@@ -32,25 +30,26 @@ https://github.com/karnauskas/chef-yum-plugin-versionlock
 
 ### Actions:
 
-| Action 	| Description                                                            	|
-|--------	|------------------------------------------------------------------------	|
-| add    	| Creates a new package lock. Has no effect if one already exists.       	|
-| update 	| Updates an existing lock, or creates a new one if one does not exists. 	|
-| delete 	| Deletes a lock, if it exists.                                          	|
+| Action    | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `:add`    | Adds a new lock or updates an exising one.            |
+| `:update` | Same as `:add`. Provided for backwards compatibility. |
+| `:delete` | Deletes a lock, if it exists.                         |
 
 ### Properties:
 
-| Name    	| Type            	| Default                     	|
-|---------	|-----------------	|-----------------------------	|
-| package 	| String          	| Resource name               	|
-| epoch   	| String, Integer 	| `0`                         	|
-| version 	| String, Integer 	|                             	|
-| release 	| String, Integer 	|                             	|
-| arch    	| String          	| `node['kernel']['machine']` 	|
+| Name    | Type            | Default                     |
+| ------- | --------------- | --------------------------- |
+| package | String          | Resource name               |
+| epoch   | String, Integer | `0`                         |
+| version | String, Integer |                             |
+| release | String, Integer |                             |
+| arch    | String          | `node['kernel']['machine']` |
 
 ### Examples:
 
 Create a lock if it does not exist:
+
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -60,6 +59,7 @@ end
 ```
 
 Update an existing lock or create a new one:
+
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -69,6 +69,7 @@ end
 ```
 
 Remove an existing lock:
+
 ```ruby
 yum_version_lock 'topbeat' do
   version '1.2.3'
@@ -79,11 +80,11 @@ end
 
 ## Attributes
 
-| Attribute                                            	| Default value                            	| Description                                            	|
-|------------------------------------------------------	|------------------------------------------	|--------------------------------------------------------	|
-| `node['yum-plugin-versionlock']['enabled']`          	| `1`                                      	| Whether to enable the plugin                          	|
-| `node['yum-plugin-versionlock']['follow_obsoletes']` 	| `0`                                      	| Whether to see if specified packages have an obsoleter 	|
-| `node['yum-plugin-versionlock']['locklist']`         	| `/etc/yum/pluginconf.d/versionlock.list` 	| Path to the config file                               	|
+| Attribute                                            | Default value                            | Description                                            |
+| ---------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------ |
+| `node['yum-plugin-versionlock']['enabled']`          | `1`                                      | Whether to enable the plugin                           |
+| `node['yum-plugin-versionlock']['follow_obsoletes']` | `0`                                      | Whether to see if specified packages have an obsoleter |
+| `node['yum-plugin-versionlock']['locklist']`         | `/etc/yum/pluginconf.d/versionlock.list` | Path to the config file                                |
 
 # Contributing
 

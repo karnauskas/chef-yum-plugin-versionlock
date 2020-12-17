@@ -10,9 +10,9 @@ property :arch, [String, Integer], default: node["kernel"]["machine"]
 default_action :add
 
 action :add do
-  locks = lockfile_content
+  locks = yumvl_lockfile_content
 
-  locks[new_resource.package] = version_string
+  locks[new_resource.package] = yumvl_version_string
 
   template node["yum-plugin-versionlock"]["locklist"] do
     source "versionlock.list.erb"
@@ -26,7 +26,7 @@ action :update do
 end
 
 action :remove do
-  locks = lockfile_content
+  locks = yumvl_lockfile_content
 
   locks.delete(new_resource.package)
 

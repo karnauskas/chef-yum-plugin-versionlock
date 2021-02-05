@@ -4,6 +4,7 @@
 - Improved matching process for package versions in locks file
 - Removed dependency on "line" cookbook
 - Removed CentOS 6 support
+
 # 0.3.1
 - Remove duplicated entries from lock file
 

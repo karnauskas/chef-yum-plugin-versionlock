@@ -1,3 +1,4 @@
+unified_mode true
 resource_name :yum_version_lock
 provides :yum_version_lock
 

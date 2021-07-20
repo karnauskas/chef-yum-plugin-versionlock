@@ -1,3 +1,4 @@
+unified_mode true
 resource_name :yum_version_lock
 provides :yum_version_lock
 unified_mode true if respond_to?(:unified_mode)

@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "berkshelf", "~> 7.1.0"
 gem "chefspec", "~> 9.2.1"
-gem "cookstyle", "~> 6.18.8"
+gem "cookstyle", "~> 7.15.1"
 gem "rake"
 
 group :integration do

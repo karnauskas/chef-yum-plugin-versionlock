@@ -6,7 +6,7 @@ gem "cookstyle", "~> 7.15.1"
 gem "rake"
 
 group :integration do
-  gem "kitchen-dokken", "~> 2.10.0"
+  gem "kitchen-dokken", "~> 2.14.0"
   gem "kitchen-inspec", "~> 2.0.0"
   gem "test-kitchen", "~> 2.12.0"
 end

@@ -8,7 +8,7 @@ gem "rake"
 group :integration do
   gem "kitchen-dokken", "~> 2.14.0"
   gem "kitchen-inspec", "~> 2.5.0"
-  gem "test-kitchen", "~> 2.12.0"
+  gem "test-kitchen", "~> 3.0.0"
 end
 
 group :vagrant do

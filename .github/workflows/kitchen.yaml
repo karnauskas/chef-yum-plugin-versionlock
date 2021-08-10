@@ -1,40 +1,25 @@
----
-name: CI
-
-"on":
-  - push
-  - pull_request
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
-    name: Tests
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        ruby: ["2.6"]
-        chef: ["15", "16", "17"]
+        chef:
+          - 15
+          - 16
+          - 17
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set up Ruby ${{ matrix.ruby }}
-        uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ matrix.ruby }}
-
-      # - name: Set up cache
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: /tmp/vendor/bundle
-      #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-gems-
-
-      - name: Prepare
-        run: |
-          bundle config path /tmp/vendor/bundle
-          bundle config set without 'development vagrant'
-          bundle || bundle install --jobs 4 --retry 3
+          ruby-version: 2.6
+          bundler-cache: true
 
       - name: Run Unit tests
         run: |
@@ -44,6 +29,6 @@ jobs:
         run: |
           bundle exec kitchen test
         env:
-          KITCHEN_YAML: kitchen.dokken.yml
-          CHEF_VERSION: ${{ matrix.chef }}
           CHEF_LICENSE: accept-no-persist
+          CHEF_VERSION: ${{ matrix.chef }}
+          KITCHEN_YAML: kitchen.dokken.yml

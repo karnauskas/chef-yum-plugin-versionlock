@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "berkshelf", "~> 7.2.2"
 gem "chefspec", "~> 9.3.0"
-gem "cookstyle", "~> 7.19.0"
+gem "cookstyle", "~> 7.20.0"
 gem "rubocop-discourse"
 gem "rake"
 

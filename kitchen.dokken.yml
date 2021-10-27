@@ -17,13 +17,9 @@ verifier:
   load_plugins: true
 
 platforms:
-  - name: centos-7
+  - name: <%= ENV['PLATFORM_VERSION'] %>
     driver:
-      image: dokken/centos-7
-      pid_one_command: /usr/lib/systemd/systemd
-  - name: centos-8
-    driver:
-      image: dokken/centos-8
+      image: dokken/<%= ENV['PLATFORM_VERSION'] %>
       pid_one_command: /usr/lib/systemd/systemd
 
 suites:

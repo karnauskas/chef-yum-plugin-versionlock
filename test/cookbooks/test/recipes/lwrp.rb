@@ -54,4 +54,7 @@ yum_version_lock "gcc" do
   end
   action :update
 end
-package "gcc"
+
+package "gcc" do
+  action :upgrade
+end

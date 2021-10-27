@@ -12,6 +12,9 @@ jobs:
           - 15
           - 16
           - 17
+        platform:
+          - centos-7
+          - centos-8
 
     steps:
       - uses: actions/checkout@v2
@@ -32,3 +35,4 @@ jobs:
           CHEF_LICENSE: accept-no-persist
           CHEF_VERSION: ${{ matrix.chef }}
           KITCHEN_YAML: kitchen.dokken.yml
+          PLATFORM_VERSION: ${{ matrix.platform }}

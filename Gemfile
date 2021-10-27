@@ -12,7 +12,7 @@ end
 
 group :vagrant do
   gem "kitchen-inspec", "~> 2.5.0"
-  gem "kitchen-vagrant", "~> 1.9.0"
+  gem "kitchen-vagrant", "~> 1.10.0"
 end
 
 group :release do

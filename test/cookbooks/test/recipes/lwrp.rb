@@ -49,8 +49,8 @@ yum_version_lock "gcc" do
     version "4.8.5"
     release "39.el7"
   when 8
-    version "8.4.1"
-    release "1.el8"
+    version "8.3.1"
+    release "5.el8.0.2"
   end
   action :update
 end

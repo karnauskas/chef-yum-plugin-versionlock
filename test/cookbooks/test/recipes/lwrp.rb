@@ -55,4 +55,11 @@ yum_version_lock "gcc" do
   action :update
 end
 
-package "gcc"
+case node["platform_version"].to_i
+when 7
+  package "gcc"
+when 8
+  package "gcc" do
+    ignore_failure true
+  end
+end

@@ -1,5 +1,8 @@
 # Unreleased
 
+# 0.4.1
+- Set unified_mode to true
+
 # 0.4.0
 - Improved matching process for package versions in locks file
 - Removed dependency on "line" cookbook

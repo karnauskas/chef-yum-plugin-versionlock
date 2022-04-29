@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "berkshelf", "~> 7.2.2"
+gem "berkshelf", "~> 8.0.0"
 gem "chefspec", "~> 9.3.0"
 gem "cookstyle", "~> 7.32.0"
 gem "rubocop-discourse"

@@ -11,7 +11,7 @@ group :integration do
 end
 
 group :vagrant do
-  gem "kitchen-inspec", "~> 2.5.0"
+  gem "kitchen-inspec", "~> 2.6.0"
   gem "kitchen-vagrant", "~> 1.11.0"
 end
 

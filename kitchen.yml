@@ -23,3 +23,7 @@ suites:
       - recipe[test::idempotency]
     provisioner:
       enforce_idempotency: true
+  - name: existing
+    run_list:
+      - recipe[test::existing]
+      - recipe[test::lwrp]

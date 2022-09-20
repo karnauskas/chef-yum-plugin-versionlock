@@ -8,8 +8,8 @@ module YumPluginVersionlock
           begin
             content = ::File.read(node["yum-plugin-versionlock"]["locklist"]).split("\n\n")
             content.each do |l|
-              next unless l.match(/# .+\n.+/)
-              next if l.match(/# Managed by Chef!.*\n# Changes will be overwritten!.*/)
+              next unless l =~ /# .+\n.+/
+              next if l =~ /# Managed by Chef!.*\n# Changes will be overwritten!.*/
               _, package, lock_string = l.split(/# (.+)\n(.+)/)
               locks[package] = lock_string
             end

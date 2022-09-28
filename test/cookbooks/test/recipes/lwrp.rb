@@ -1,11 +1,11 @@
 ## Recipe to test the LWRPs and the default recipe
 
 include_recipe "yum-plugin-versionlock"
-if node["platform_version"].to_i < 8
-  include_recipe "yum-centos::vault"
-else
-  include_recipe "yum-centos"
+if node["platform_version"].to_i == 8
+  node.default["yum"]["base"]["mirrorlist"] = nil
+  node.default["yum"]["base"]["baseurl"] = "http://vault.centos.org/$releasever/BaseOS/$basearch/os/"
 end
+include_recipe "yum-centos::vault"
 
 # Test Adding a lock
 yum_version_lock "rpm" do

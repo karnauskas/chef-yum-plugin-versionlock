@@ -1,7 +1,7 @@
 ## Recipe to test the LWRPs and the default recipe
 
 include_recipe "yum-plugin-versionlock"
-if node['platform_version'].to_i < 8
+if node["platform_version"].to_i < 8
   include_recipe "yum-centos::vault"
 else
   include_recipe "yum-centos"

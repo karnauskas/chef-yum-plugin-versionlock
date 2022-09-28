@@ -3,7 +3,7 @@
 include_recipe "yum-plugin-versionlock"
 if node["platform_version"].to_i == 8
   node.default["yum"]["base"]["mirrorlist"] = nil
-  node.default["yum"]["base"]["baseurl"] = "http://vault.centos.org/$releasever/BaseOS/$basearch/os/"
+  node.default["yum"]["base"]["baseurl"] = "https://vault.centos.org/$releasever/BaseOS/$basearch/os/"
 end
 include_recipe "yum-centos::vault"
 

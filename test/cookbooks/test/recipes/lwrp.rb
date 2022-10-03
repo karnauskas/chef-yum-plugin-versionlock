@@ -43,6 +43,19 @@ yum_version_lock "yum" do
 end
 
 # Test that locks actually work
+# in 7, libgomp dep fails if not managed with same version of gcc
+yum_version_lock "libgomp" do
+  version "4.8.5"
+  release "39.el7"
+  action :update
+  not_if { node["platform_version"].to_i == 8 }
+end
+
+package "libgomp" do
+  action :upgrade
+  not_if { node["platform_version"].to_i == 8 }
+end
+
 yum_version_lock "gcc" do
   case node["platform_version"].to_i
   when 7

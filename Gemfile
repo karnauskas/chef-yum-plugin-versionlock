@@ -7,7 +7,7 @@ gem "rubocop-discourse"
 gem "rake"
 
 group :integration do
-  gem "kitchen-dokken", "~> 2.19.0"
+  gem "kitchen-dokken", "~> 2.20.3"
 end
 
 group :vagrant do
